@@ -19,6 +19,14 @@ public class User implements Fnc_1 {
         Listof = new ArrayList<>();
     }
 
+    public User() {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.phone = phone;
+        Listof = new ArrayList<>();
+    }
+
     public int getId() {
         return id;
     }
@@ -61,6 +69,17 @@ public class User implements Fnc_1 {
             System.out.println(u);
         }
     }
+
+    @Override
+    public void edit_user(User user, User updated) {
+        for (User u : Listof) {
+            if (u.getId() == user.getId() && u.getName().equals(updated.getName())) {
+                u.setName(updated.getName());
+                System.out.println("Succes action");
+            }
+        }
+    }
+
 
     @Override
     public String toString() {
